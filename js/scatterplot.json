@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "title": "Electricty ",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_group_continent.csv"
+  },
+  "transform": [{"filter":"datum.avg_electricity > 0"}, {"filter":"datum.gdp > 0"}],
+  "params":[{
+      "name" : "continent_highlight",
+      "select": {"type": "point", "fields": ["continent"]},
+      "bind": "legend"
+    }
+  ],
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "avg_electricity",
+      "type": "quantitative",
+      "title": "Total Electricity Consumption",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "log", "domain": [1, 10000000]}
+}, "y": {
+      "field": "gdp",
+      "type": "quantitative",
+      "title": "GDP per capita",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "log", "domain": [1, 1000000000000000]}
+    },
+    "color": {
+      "field": "continent",
+      "type": "nominal",
+      "scale": {
+      "domain": [
+        "North America",
+        "South America",
+        "Europe",
+        "Africa",
+        "Asia",
+        "Oceania"
+      ], "range": [
+        "#e41a1c",
+        "#984ea3",
+        "#ff7f00",
+        "#a6cee3",
+        "#377eb8",
+        "#a65628"]
+        }
+      }, 
+      "opacity": {
+        "condition": {"param": "continent_highlight", "value": 0.6},
+        "value": 0.2
+        },
+      "size": {
+      "field": "avg_population",
+       "type": "quantitative",
+       "scale":{
+         "type":"threshold",
+         "domain": [100000, 1000000, 5000000, 10000000, 50000000 ],
+         "range": [10, 50, 150, 200, 300, 400]
+       },
+       "legend": {"format": ".1s"}
+},
+"tooltip":[
+  {"field": "country", "type": "nominal"},
+  {"field": "avg_population", "type": "quantitative"},
+  {"field": "avg_electricity", "type": "quantitative"},
+  {"field": "gdp", "type": "quantitative"}
+] 
+}
+}
+ 
