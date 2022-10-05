@@ -59,7 +59,6 @@
               "type": "threshold",
               "domain": [0, 0.1, 1, 2],
               "scheme": "greens"
-              // "range": ["#69bd92", "#33dc7e", "#209666", "#314c38"]
             },
             "legend":{
               "orient": "bottom", "layout": {"bottom": {"anchor": "middle"}}}
