@@ -53,13 +53,16 @@
         "encoding": {
           "color": {
             "field": "Renewable Energy Production per 10,000 population",
-            "title": "Renewable Energy Production per 10,000 population",
+            "title": "Renewable Energy (Terawatt)",
             "type": "quantitative",
             "scale": {
               "type": "threshold",
               "domain": [0, 0.1, 1, 2],
-              "range": ["#69bd92", "#33dc7e", "#209666", "#314c38"]
-            }
+              "scheme": "greens"
+              // "range": ["#69bd92", "#33dc7e", "#209666", "#314c38"]
+            },
+            "legend":{
+              "orient": "bottom", "layout": {"bottom": {"anchor": "middle"}}}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
