@@ -6,6 +6,7 @@
           "bind":{
             "input": "select",
             "options":[
+              null,
               "Americas",
               "Europe",
               "Africa",
@@ -13,6 +14,7 @@
               "Oceania"
             ],
             "labels": [
+              "Show All",
               "Americas",
               "Europe",
               "Africa",
@@ -28,7 +30,7 @@
       "width": 400,
       "height": 200,
       "transform": [
-      {"filter": "datum.continent == continent_selection || datum.continent == 'Americas'"}
+      {"filter": "continent_selection == null || datum.continent == continent_selection"}
     ],
       "description": "A simple donut chart with embedded data.",
       "data": {
@@ -58,7 +60,7 @@
       "width": 400,
       "height": 200,
       "transform": [
-      {"filter": "datum.continent == continent_selection || datum.continent == 'Americas'"}
+      {"filter": "continent_selection == null || datum.continent == continent_selection"}
     ],
       "description": "A simple donut chart with embedded data.",
       "data": {
