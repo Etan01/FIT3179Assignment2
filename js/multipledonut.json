@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "params": [
+        {
+          "name": "continent_selection",
+          "bind":{
+            "input": "select",
+            "options":[
+              "Americas",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "labels": [
+              "Americas",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "name": "Continent Selection: "
+          }
+        }
+      ],
+  "hconcat": [
+    {
+      "width": 400,
+      "height": 200,
+      "transform": [
+      {"filter": "datum.continent == continent_selection || datum.continent == 'Americas'"}
+    ],
+      "description": "A simple donut chart with embedded data.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/non_renew.csv"
+      },
+      "layer": [
+        {"mark": {"type": "arc", "innerRadius": 60}},
+        {"mark": {
+          "type": "text",
+          "radius": 140},
+        "encoding": {
+          "text": {
+            "field": "category", 
+            "type": "nominal"}
+        }}
+      ],
+      "encoding": {
+        "theta": {"field": "percent", "type": "quantitative", "stack": true},
+        "color": {"field": "category", "type": "nominal"},
+        "tooltip":[
+          {"field": "category"},
+          {"field": "percent"}
+        ]
+      }
+    },
+    {
+      "width": 400,
+      "height": 200,
+      "transform": [
+      {"filter": "datum.continent == continent_selection || datum.continent == 'Americas'"}
+    ],
+      "description": "A simple donut chart with embedded data.",
+      "data": {
+        "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/renew.csv"
+      },
+      "layer": [
+        {"mark": {"type": "arc", "innerRadius": 60}},
+        {"mark": {
+          "type": "text",
+          "radius": 140},
+        "encoding": {
+          "text": {
+            "field": "category", 
+            "type": "nominal"}
+        }}
+      ],
+      "encoding": {
+        "theta": {"field": "percent", "type": "quantitative", "stack": true},
+        "color": {"field": "category", "type": "nominal"},
+        "tooltip":[
+          {"field": "category"},
+          {"field": "percent"}
+        ]
+      }
+    }
+  ]
+}
+
+

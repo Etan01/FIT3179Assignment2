@@ -63,6 +63,21 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
   </div>
+<br>
+
+<div class="pure-g" style="top: 100px;">
+  <div class="pure-u-1-3" style="width: 30%;">
+      <div class="description description-left">
+        <h2>Two Columns Layout</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div id="scatterplot"></div>
+  </div>
+</div>
+<br>
+
 </div>
 
 
@@ -72,6 +87,7 @@
   var spec2 = "js/scatterplot.json";
   var spec3 = "js/parallelplot.json"
   var spec4 = "js/greenmap.json"
+  var spec5 = "js/multipledonut.json"
 
 
   vegaEmbed('#choropleth_map', spec1).then(function(result) {
@@ -89,6 +105,11 @@
   vegaEmbed('#greenmap', spec4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+
+  vegaEmbed('#multipledonut', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
 </script>
 
 </body>
