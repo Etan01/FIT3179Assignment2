@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bump chart",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/coal_long.csv"
+    },
+    "mark": {"type": "line", "point": true},
+    "encoding": {
+      "x": {"field": "year"},
+      "y": {"field": "coal_rank", "type": "nominal", "sort": "-descending"},
+      "order": {"field": "year"},
+      "color": {"field": "country", "type": "nominal"}
+    }
+  }
+  
