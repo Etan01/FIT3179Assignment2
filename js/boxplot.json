@@ -7,15 +7,7 @@
     "transform": [
       {"filter": {"field": "year",
             "timeUnit": "year",
-            "range": [2000, 2010]}},
-      // {
-      //   "aggregate": [{
-      //    "op": "sum",
-      //    "field": "total",
-      //    "as": "abc"
-      //   }],
-      //   "groupby": ["continent"]
-      // }
+            "range": [2000, 2010]}}
     ],
     "vconcat": [
       {
@@ -40,7 +32,6 @@
           "size": {
             "title": "Population",
             "field": "population",
-            // "scale": {"domain": [-1, 50]},
             "type": "quantitative"
           },
           "x": {

@@ -1,6 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "params": [
+  "title": {
+    "text": "Percentage of each electricity consumption per Continent",
+    "anchor": "middle"
+  },
+  "params": [
         {
           "name": "continent_selection",
           "bind":{
@@ -37,15 +41,7 @@
         "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/non_renew.csv"
       },
       "layer": [
-        {"mark": {"type": "arc", "innerRadius": 60}},
-        {"mark": {
-          "type": "text",
-          "radius": 140},
-        "encoding": {
-          "text": {
-            "field": "category", 
-            "type": "nominal"}
-        }}
+        {"mark": {"type": "arc", "innerRadius": 60}}
       ],
       "encoding": {
         "theta": {"field": "percent", "type": "quantitative", "stack": true},
@@ -67,15 +63,7 @@
         "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/renew.csv"
       },
       "layer": [
-        {"mark": {"type": "arc", "innerRadius": 60}},
-        {"mark": {
-          "type": "text",
-          "radius": 140},
-        "encoding": {
-          "text": {
-            "field": "category", 
-            "type": "nominal"}
-        }}
+        {"mark": {"type": "arc", "innerRadius": 60}}
       ],
       "encoding": {
         "theta": {"field": "percent", "type": "quantitative", "stack": true},
