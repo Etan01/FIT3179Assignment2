@@ -1,64 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Seattle Weather, 2012-2015",
+  "title": "Solar Electricity Consumption per Continent",
+  "description": "Stacked Chart on solar_electricity",
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_clean.csv"
   },
-  "transform": [
-    {"filter": {"field": "year",
-          "timeUnit": "year",
-          "range": [2000, 2010]}}
-  ],
   "vconcat": [
+    {"layer":[
     {
+      "width": 500,
+      "height": 400,
+      "transform": [
+        {
+          "filter": {"field": "year", "timeUnit": "year", "range": [2000, 2020]}
+        },
+        {"filter": {"param": "click"}}
+      ],
+      "mark": "area",
       "encoding": {
-        "color": {
-          "condition": {
-            "param": "brush",
-            "title": "Continent",
-            "field": "continent",
-            "type": "nominal",
-            "scale": {
-              "domain": ["Americas",
-                        "Europe",
-                        "Africa",
-                        "Asia",
-                        "Oceania"],
-              "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
-            }
-          },
-          "value": "lightgray"
-        },
-        "size": {
-          "title": "Population",
-          "field": "population",
-          "type": "quantitative"
-        },
         "x": {
-          "field": "year",
           "timeUnit": "year",
-          "title": "Year",
-          "axis": {"format": "%Y"}
+          "field": "year",
+          "title": "Year (2000-2016)",
+          "axis": {"domain": false, "format": "%Y", "tickSize": 0}
         },
         "y": {
-          "title": "Total",
-          "field": "total",
-          "type": "quantitative"
+          "aggregate": "sum",
+          "field": "solar_electricity",
+          "title": "Solar Electricity",
+          "stack": "zero"
         },
-        "tooltip":[
-          {"field": "country", "type": "nominal"},
-          {"field": "total", "type": "quantitative"}
-        ]
-      },
-      "width": 600,
-      "height": 300,
-      "mark": "point",
-      "params": [{
-        "name": "brush",
-        "select": {"type": "interval", "encodings": ["x"]}
-      }],
-      "transform": [{"filter": {"param": "click"}}]
-    },
+        "color": {"field": "continent", "type": "nominal"},
+        "tooltip": [{"field": "continent", "type": "ordinal"}]
+      }
+    }
+    ]},
     {
       "encoding": {
         "color": {
@@ -66,11 +42,7 @@
             "param": "click",
             "field": "continent",
             "scale": {
-              "domain": ["Americas",
-                        "Europe",
-                        "Africa",
-                        "Asia",
-                        "Oceania"],
+              "domain": ["Asia", "Americas", "Africa", "Oceania", "Europe"],
               "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
             }
           },
@@ -81,12 +53,9 @@
       },
       "width": 600,
       "mark": "bar",
-      "params": [{
-        "name": "click",
-        "select": {"type": "point", "encodings": ["color"]}
-      }],
-      "transform": [{"filter": {"param": "brush"}}]
+      "params": [
+        {"name": "click", "select": {"type": "point", "encodings": ["color"]}}
+      ]
     }
   ]
 }
-

@@ -17,68 +17,81 @@
 
 </head>
 <body>
-  
-<div id="choropleth_map" style="display: contents;"></div>
-<div class="description description" style="top: 50px;">
-  <h2>Long Description Title</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-<br>
 
-<div class="pure-g" style="top: 100px;">
-  <div class="pure-u-1-3">
-    <div class="description description-right">
-      <h2>Two Columns Layout</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
+<div class="homepage">
+
+  <div class="title">
+    <h1>Global Electritcity Consumption</h1>
   </div>
 
-  <div class="pure-u-2-3">
-    <div id="greenmap"></div>
+  <div id="choropleth_map" style="display: contents;"></div>
+  <div class="description description" style="top: 50px;">
+    <h2>Long Description Title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
-</div>
-<br>
+  <br>
 
-<div class="pure-g" style="top: 100px;">
-  <div class="pure-u-1-3" style="width: 30%;">
-    <div class="description description-left">
-      <h2>Two Columns Layout</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
-  <div class="pure-u-2-3">
-    <div id="scatterplot"></div>
-  </div>
-</div>
-<br>
-
-<div class="pure-g" style="top: 100px;">
-  <div class="pure-u-2-3">
-    <div id="parallelplot"></div>
-  </div>
-
-  <div class="pure-u-1-3">
-    <div class="description description-right">
-      <h2>Two Columns Layout</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
-</div>
-<br>
-
-<div class="pure-g" style="top: 100px;">
-  <div class="pure-u-1-3" style="width: 30%;">
-      <div class="description description-left">
+  <div class="pure-g" style="top: 100px; ">
+    <div class="pure-u-1-3">
+      <div class="description description-right">
         <h2>Two Columns Layout</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
+
     <div class="pure-u-2-3">
-      <div id="multipledonut">
+      <div id="greenmap"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px; margin: 20px; justify-content: space-around;">
+    <div class="pure-u-1-3" style="width: 30%;">
+      <div class="description description-left">
+        <h2>Global Electricity Consumption per Country</h2>
+        <p>This scatterplot visualise the relationship between total electricity consumption and  GDP per capita.
+          The higher the GDP per capita, the higher the total electricity consumption it takes. In this visualisation, 
+          United States is the top one that consumes 1,013 Terawtt electricity which is double to Russia.
+        </p>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div id="scatterplot"></div>
+    </div>
+  </div>
+  <br>
+
+  <div class="pure-g" style="top: 100px;">
+    <div class="pure-u-2-3">
+      <div id="parallelplot"></div>
+    </div>
+
+    <div class="pure-u-1-3">
+      <div class="description description-right">
+        <h2>Two Columns Layout</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
   </div>
+  <br>
 
+  <div class="pure-g" style="top: 100px; margin: 20px; justify-content: space-around;">
+    <div class="pure-u-1-3" style="width: 30%; ">
+        <div class="description description-left">
+          <h2>Solar Electricity Consumption per Continent</h2>
+          <p>This stack area visualise the trend of using solar electricity over the years. As the trend moves
+            close to 2010, many country in different continent starts to implement solar energy. In this diagram, Americas
+            is the fastest continent followed by Asia. It uses solar electricity as their main electricity production. It is also
+            twice to Europe.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="stackarea">
+        </div>
+      </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">
@@ -88,7 +101,7 @@
   var spec3 = "js/parallelplot.json"
   var spec4 = "js/greenmap.json"
   var spec5 = "js/multipledonut.json"
-
+  var spec6 = "js/stackarea.json"
 
   vegaEmbed('#choropleth_map', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -107,6 +120,10 @@
   }).catch(console.error);
 
   vegaEmbed('#multipledonut', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#stackarea', spec6).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 

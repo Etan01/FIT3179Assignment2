@@ -12,3 +12,15 @@ body{
 	/*height: 1000px;
 	width: 800px;*/
 }
+
+.homepage{
+	margin: 30px;
+	padding: 30px;
+	background-color: #DBE1F1;
+}
+
+.title{
+	font-size: 30px;
+	padding: 60px;
+	text-align: center;
+}
