@@ -24,3 +24,7 @@ body{
 	padding: 60px;
 	text-align: center;
 }
+
+.lottie-player-container{
+    vertical-align: middle;
+}
