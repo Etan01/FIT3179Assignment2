@@ -28,3 +28,11 @@ body{
 .lottie-player-container{
     vertical-align: middle;
 }
+
+.text{
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	width: 1130px;
+	justify-content: space-around;
+}
