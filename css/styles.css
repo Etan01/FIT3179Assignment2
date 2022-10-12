@@ -14,15 +14,14 @@ body{
 }
 
 .homepage{
-	margin: 30px;
-	padding: 30px;
-	background-color: #DBE1F1;
+	background-color: antiquewhite;
 }
 
 .title{
-	font-size: 30px;
+	font-size: 20px;
 	padding: 60px;
 	text-align: center;
+	background-color: #ffffff;
 }
 
 .lottie-player-container{
@@ -35,3 +34,8 @@ body{
 	width: 1130px;
 	justify-content: space-around;
 }
+
+hr {
+	border: 0;
+	border-top: 2px solid black;
+  }
