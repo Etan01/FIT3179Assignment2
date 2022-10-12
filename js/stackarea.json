@@ -1,7 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Solar Electricity Consumption per Continent",
+  "title": "Solar Electricity Consumption per Continent (2000-2016)",
   "description": "Stacked Chart on solar_electricity",
+  "background": null,
+
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_clean.csv"
   },

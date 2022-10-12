@@ -3,6 +3,7 @@
   "title": "Electritcity Consumption around the world",
   "width": 800,
   "height": 400,
+  "background": null,
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/DataVis_Week9/main/js/ne_110m_admin_0_countries.topojson",

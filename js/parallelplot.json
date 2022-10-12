@@ -1,11 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Though Vega-Lite supports only one scale per axes, one can create a parallel coordinate plot by folding variables, using `joinaggregate` to normalize their values and using ticks and rules to manually create axes.",
+  "description": "Parallel Plt",
+  "title": "Non-renewable Electricity Consumption in 2016",
+  "background": null,
+
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_clean.csv"
   },
   "width": 600,
-  "height": 300,
+  "height": 400,
   "transform": [
     {"filter": "datum.biofuel_electricity"},
     {"window": [{"op": "count", "as": "index"}]},

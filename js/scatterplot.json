@@ -2,21 +2,24 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
   "height": 400,
-  "title": "Electricty ",
+  "title": "Trend on Total Electricty Consumption and GDP per Capita",
+  "background": null,
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_group_continent.csv"
   },
   "transform": [
     {"filter": "datum.avg_electricity > 0"},
     {"filter": "datum.gdp > 0"},
-    {"filter": "continent_selection == null || datum.continent == continent_selection"},
+    {
+      "filter": "continent_selection == null || datum.continent == continent_selection"
+    },
     {"filter": "datum.avg_population > Population_above"}
   ],
   "params": [
     {
       "name": "Population_above",
       "value": 0,
-      "bind":{
+      "bind": {
         "input": "range",
         "min": 0,
         "max": 100000000,
@@ -26,16 +29,9 @@
     },
     {
       "name": "continent_selection",
-      "bind":{
+      "bind": {
         "input": "select",
-        "options":[
-          null,
-          "Americas",
-          "Europe",
-          "Africa",
-          "Asia",
-          "Oceania"
-        ],
+        "options": [null, "Americas", "Europe", "Africa", "Asia", "Oceania"],
         "labels": [
           "Show All",
           "Americas",
@@ -59,20 +55,25 @@
       "field": "gdp",
       "type": "quantitative",
       "title": "GDP per capita",
-      "axis": {"tickCount": 6}   
-      }
+      "axis": {"tickCount": 6}
+    }
   },
-  "layer":[
+  "layer": [
     {
+      "params": [{
+        "name": "grid",
+        "select": "interval",
+        "bind": "scales"
+      }],
       "mark": "circle",
       "encoding": {
-        "size":{
+        "size": {
           "field": "avg_population",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [100000, 100000, 500000, 5000000],
-            "range": [10, 50, 150, 200]
+            "domain": [100000, 10000000, 50000000, 100000000],
+            "range": [10, 50, 150, 400]
           },
           "legend": {"format": ".1s"}
         },
@@ -80,13 +81,7 @@
           "field": "continent",
           "type": "nominal",
           "scale": {
-            "domain": [
-              "Americas",
-              "Europe",
-              "Africa",
-              "Asia",
-              "Oceania"
-            ],
+            "domain": ["Americas", "Europe", "Africa", "Asia", "Oceania"],
             "range": [
               "#e41a1c",
               "#984ea3",
@@ -95,11 +90,9 @@
               "#377eb8",
               "#a65628"
             ]
-            }
+          }
         },
-        "opacity": {
-          "value": 0.6
-        },
+        "opacity": {"value": 0.6},
         "tooltip": [
           {"field": "country", "type": "nominal"},
           {"field": "avg_population", "type": "quantitative"},
@@ -109,7 +102,7 @@
       }
     },
     {
-      "mark":{
+      "mark": {
         "type": "text",
         "align": "right",
         "baseline": "middle",
@@ -120,8 +113,8 @@
       "encoding": {
         "text": {"field": "country", "type": "nominal"},
         "color": {"value": "black"},
-        "opacity":{
-          "condition":{
+        "opacity": {
+          "condition": {
             "test": "datum['country'] == 'United States' || datum['country'] == 'China' || datum['country'] == 'Russia' || datum['country'] == 'Japan' || datum['country'] == 'Italy'",
             "value": 1
           },

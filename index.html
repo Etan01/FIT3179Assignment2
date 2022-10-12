@@ -19,33 +19,57 @@
 
 <div class="homepage">
 
-  <div class="section">
-      <div class="text">
-        <h1>Green Energy</h1>
-      </div>
-      <div class="lottie-player-container">
-        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_znhs1kb6.json" background="transparent"  speed="1"  style="height: 300px; text-align: center;" loop autoplay></lottie-player>
-      </div>
-  </div>
-
   <div class="title">
-    <h1>Global Electritcity Consumption</h1>
+    <div class="text">
+      <h1>Global Electritcity Consumption</h1>
+      <h5>
+        Electricity Consumption is an amount of electricity being consumed by the population,
+        countries and all the world. It is an important energy that the human kind needs it since
+        after a bulb was created by Thomas Edison. The electricity consumption can be generated from many
+        different sources such as coal, diesel, gas, water and other energy sources. There are two sources to 
+        generate the electricity. One is Non-renewable energy sources and another one is renewable energy 
+        sources. Coals are mainly used from those days until now as the source for electricity. Until today, many
+        countries are still rely on the coal electricity. However, using coal as the electricity generator, it contributes
+        to air pollution which results in greenhouse 
+  </h5>
+      <p>Created by Eng Teck Tan</p>
+    </div>
+
+    <div class="lottie-player-container">
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_znhs1kb6.json" background="transparent"  speed="1"  style="height: 300px; text-align: center;" loop autoplay></lottie-player>
+    </div>
   </div>
   <div class="pure-u-1-1" style="text-align: center;">
     <div id="choropleth_map" style="display: contents;"></div>
   </div>
 
   <div class="description description" style="top: 50px; padding: 30px;">
-    <h2>Long Description Title</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <h2>World Total Electricity Consumption until now</h2>
+    <p>
+      It visualizes the total electricity consumption around the world. 
+      In this visualization, there is color hue used for the color choice. 
+      When the country consumes less electricity, then the color will be in light green. 
+      Likewise, the higher the electricity consumption, the darker the color it has such as from 
+      yellow to dark red. Data Transformation is applied to calculate the electricity consumption.
+       The electricity consumption is normalized by the overall population. The range is [0, 2, 5, 11].
+        Blue area means the place is in ocean and there is graticule showing in the map. 
+        Moreover, the color in grey means that there are no related data from the dataset from the 
+        greyscale country. In this idiom, there is high electricity consumption in United States, Canada and Australia. Let's explore why these country
+        have higher electricity consumption than other countries.
+    </p>
   </div>
   <br>
 
   <div class="pure-g" style="top: 100px; margin: 20px; padding: 30px; justify-content: space-around;">
     <div class="pure-u-1-3">
       <div class="description description-right">
-        <h2>Two Columns Layout</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2>Renewable Energy Production around the world</h2>
+        <p>This map idiom visualises the renewable energy production around the world. Renewable Energy included 
+          solar electricity, hydro electricity, wind electricity and other renewable electricity. In this visualisation, 
+          countries like Canada, Norway and Sweden is the world leaders that generates the highest renewable energy. 
+          Likewise, most countries in Africa does not much rely on the renewable energy. This is because the highly cost
+          of implementing renewable energy technologies in their countries. 
+        </p>
       </div>
     </div>
 
@@ -61,7 +85,8 @@
         <h2>Global Electricity Consumption per Country</h2>
         <p>This scatterplot visualise the relationship between total electricity consumption and  GDP per capita.
           The higher the GDP per capita, the higher the total electricity consumption it takes. In this visualisation, 
-          United States is the top one that consumes 1,013 Terawtt electricity which is double to Russia.
+          United States is the top one that consumes 1,013 Terawtt electricity which is double to Russia. However,
+          many countries in Africa are experiencing lacks of electricity consumption with low GDP per capita. 
         </p>
       </div>
     </div>
@@ -74,8 +99,16 @@
   <div class="pure-g" style="top: 100px; margin: 20px;padding: 30px; justify-content: space-around;">
     <div class="pure-u-1-3" style="width: 30%; ">
         <div class="description description-left">
-          <h2>Solar Electricity Consumption per Continent</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <h2>Country Ranking on Coal Electricity Consumption on Years </h2>
+          <p>
+            This bump chart visualizes the country ranking on coal electricity consumption on years.
+            The ranking is only obtained from the top 10 country. In this chart, developed countries
+            like United States, China, India remains the top 3 that consume a lot of electricity created by coal
+            in 20th century. On the other hand, there is fluctuation on the ranking for countries Australia and Russia
+            over the years. However, there is a rise on the rank of South Korea. In 2016, South Korea has the sixth-largest
+            coal electricity consumption in the world compare to 2001 which is only in rank 11. Canada was once
+            the eleventh-highest coal electricity consumption. Until, the country has dropped out from the top 10 ranking country.
+
           </p>
         </div>
       </div>
@@ -104,9 +137,10 @@
         <div class="description description-left">
           <h2>Solar Electricity Consumption per Continent</h2>
           <p>This stack area visualise the trend of using solar electricity over the years. As the trend moves
-            close to 2010, many country in different continent starts to implement solar energy. In this diagram, Americas
-            is the fastest continent followed by Asia. It uses solar electricity as their main electricity production. It is also
-            twice to Europe.
+            close to 2010, many country in different continent starts to implement solar energy. In this diagram, Asia is 
+            is the first-highest solar energy consumption in 2016. This can mainly be contributed by China. It is then followed
+             by Europe. It uses solar electricity as their main electricity production. It is also more than 2 times to Americas.
+             Likewise, 
           </p>
         </div>
       </div>

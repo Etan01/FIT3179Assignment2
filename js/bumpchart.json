@@ -1,15 +1,41 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Bump chart",
-    "data": {
-      "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/coal_long.csv"
-    },
-    "mark": {"type": "line", "point": true},
-    "encoding": {
-      "x": {"field": "year"},
-      "y": {"field": "coal_rank", "type": "nominal", "sort": "-descending"},
-      "order": {"field": "year"},
-      "color": {"field": "country", "type": "nominal"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bump chart",
+  "background": null,
+  "width": 600,
+  "height": 400,
+  "title": "Coal Electricity Consumption by Country Ranking (2000-2016)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/coal_long2.csv"
+  },
+  "transform": [
+    {"filter": "datum.coal_rank <= 11"}
+  ],
+  "mark": {"type": "line", "point": {"size": 150}},
+  "params": [
+    {
+      "name": "continent_highlight",
+      "select": {"type": "point", "fields": ["country"]},
+      "bind": "legend"
     }
+  ],
+  "encoding": {
+    "x": {"field": "year", "title": "Year"},
+    "y": {
+      "field": "coal_rank",
+      "type": "nominal",
+      "sort": ["1","2","3","4","5","6","7","8","9","10"],
+      "title": "Ranking"
+    },
+    "order": {"field": "year"},
+    "color": {"field": "country", "type": "nominal"},
+    "opacity": {
+      "condition": {"param": "continent_highlight", "value": 0.9},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "country", "title": "Country"},
+      {"field": "coal_rank", "title": "Rank"}
+    ]
   }
-  
+}
