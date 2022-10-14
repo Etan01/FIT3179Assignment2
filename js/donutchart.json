@@ -1,59 +1,51 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 200,
-    "description": "A simple donut chart with embedded data.",
-    "transform": [
-      {"filter": "continent_selection == null || datum.continent == continent_selection"}
-    ],
-    "params": [
-      {
-        "name": "continent_selection",
-        "bind":{
-          "input": "select",
-          "options":[
-            null,
-            "Americas",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "labels": [
-            "Show All",
-            "Americas",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent Selection: "
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "background": null,
+  "description": "A simple donut chart with embedded data.",
+  "transform": [
+    {"filter": "continent_selection == null || datum.continent == continent_selection"}
+  ],
+  "params": [
+    {
+      "name": "continent_selection",
+      "bind":{
+        "input": "select",
+        "options":[
+          null,
+          "Americas",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "Americas",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
       }
-    ],
-    "data": {
-      "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/percentage_elec.csv"
-    },
-    "layer": [
-      {"mark": {"type": "arc", "innerRadius": 60}},
-      {"mark": {
-        "type": "text",
-        "radius": 140},
-      "encoding": {
-        "text": {
-          "field": "category", 
-          "type": "nominal"}
-      }}
-    ],
-    "encoding": {
-      "theta": {"field": "percent", "type": "quantitative", "stack": true},
-      "color": {"field": "category", "type": "nominal"},
-      "tooltip":[
-        {"field": "category"},
-        {"field": "percent"}
-      ]
     }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/percentage_elec.csv"
+  },
+  "layer": [
+    {"mark": {"type": "arc", "innerRadius": 90}}
+  ],
+  "encoding": {
+    "theta": {"field": "percent", "type": "quantitative", "stack": true},
+    "color": {"field": "category", "type": "nominal"},
+    "tooltip":[
+      {"field": "category"},
+      {"field": "percent"}
+    ]
   }
-  
-  
-  
+}
+
+

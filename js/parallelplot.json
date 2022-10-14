@@ -64,22 +64,26 @@
           {
             "type": "quantitative",
             "field": "biofuel_electricity",
-            "title": "BioFuel Electricity"
+            "title": "BioFuel Electricity",
+            "format": ".2f"
           },
           {
             "type": "quantitative",
             "field": "nuclear_electricity",
-            "title": "Nuclear Electricity"
+            "title": "Nuclear Electricity",
+            "format": ".2f"
           },
           {
             "type": "quantitative",
             "field": "coal_electricity",
-            "title": "Coal Electricity"
+            "title": "Coal Electricity",
+            "format": ".2f"
           },
           {
             "type": "quantitative",
             "field": "gas_electricity",
-            "title": "Gas Electricity"
+            "title": "Gas Electricity",
+            "format": ".2f"
           }
         ]
       }

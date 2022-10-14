@@ -95,9 +95,9 @@
         "opacity": {"value": 0.6},
         "tooltip": [
           {"field": "country", "type": "nominal"},
-          {"field": "avg_population", "type": "quantitative"},
-          {"field": "avg_electricity", "type": "quantitative"},
-          {"field": "gdp", "type": "quantitative"}
+          {"field": "avg_population", "type": "quantitative", "format": ".2f"},
+          {"field": "avg_electricity", "type": "quantitative", "format": ".2f"},
+          {"field": "gdp", "type": "quantitative", "format": ".2f"}
         ]
       }
     },

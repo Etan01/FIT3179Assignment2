@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Renewable Energy Production around the world",
-    "width": 800,
+    "width": 700,
     "height": 400,
     "background": null,
     "projection": {"type": "equalEarth"},
@@ -47,7 +47,8 @@
           },
           {
             "calculate": "datum.green_energy/datum.population * 10000",
-            "as": "Renewable Energy Production per 10,000 population"
+            "as": "Renewable Energy Production per 10,000 population",
+            "format": ".2f"
           }
         ],
         "mark": {"type": "geoshape"},
@@ -69,12 +70,14 @@
             {
               "field": "Renewable Energy Production per 10,000 population",
               "type": "quantitative",
-              "title": "Renewable Energy Production in Terawatt"
+              "title": "Renewable Energy Production in Terawatt",
+              "format": ".2f"
             },
             {
               "field": "population",
               "type": "quantitative",
-              "title": "Average Population"
+              "title": "Average Population",
+              "format": ".2f"
             }
           ]
         }
