@@ -44,8 +44,15 @@
             "param": "click",
             "field": "continent",
             "scale": {
-              "domain": ["Asia", "Americas", "Africa", "Oceania", "Europe"],
-              "range": ["#e7ba52", "#a7a7a7", "#aec7e8", "#1f77b4", "#9467bd"]
+              "domain": ["Americas", "Europe", "Africa", "Asia", "Oceania"],
+              "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628"
+              ]
             }
           },
           "value": "lightgray"

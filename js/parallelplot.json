@@ -42,19 +42,45 @@
     {
       "mark": "line",
       "encoding": {
-        "color": {"type": "nominal", "field": "continent"},
+        "color": {"type": "nominal", "field": "continent",
+        "scale": {
+            "domain": ["Americas", "Europe", "Africa", "Asia", "Oceania"],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
+          }
+        },
         "detail": {"type": "nominal", "field": "index"},
         "opacity": {"value": 1},
         "x": {"type": "nominal", "field": "key"},
         "y": {"type": "quantitative", "field": "norm_val", "axis": null},
         "tooltip": [
           {"type": "nominal", "field": "country", "title": "Country"},
-          {"type": "quantitative", "field": "biofuel_electricity", "title": "BioFuel Electricity"},
-          {"type": "quantitative", "field": "nuclear_electricity",
-"title": "Nuclear Electricity"},
-          {"type": "quantitative", "field": "coal_electricity", "title": "Coal Electricity"},
-          {"type": "quantitative", "field": "gas_electricity",
-          "title": "Gas Electricity"}
+          {
+            "type": "quantitative",
+            "field": "biofuel_electricity",
+            "title": "BioFuel Electricity"
+          },
+          {
+            "type": "quantitative",
+            "field": "nuclear_electricity",
+            "title": "Nuclear Electricity"
+          },
+          {
+            "type": "quantitative",
+            "field": "coal_electricity",
+            "title": "Coal Electricity"
+          },
+          {
+            "type": "quantitative",
+            "field": "gas_electricity",
+            "title": "Gas Electricity"
+          }
         ]
       }
     },
