@@ -1,11 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
-  "height": 400,
+  "height": 350,
   "background": null,
   "description": "A simple donut chart with embedded data.",
   "transform": [
-    {"filter": "continent_selection == null || datum.continent == continent_selection"}
+    {"filter": "continent_selection == null || datum.continent == continent_selection"},
+    {"filter": "datum.category == 'biofuel_electricity' || datum.category == 'nuclear_electricity' || datum.category == 'gas_electricity' || datum.category == 'oil_electricity' || datum.category == 'coal_electricity' "}
   ],
   "params": [
     {
