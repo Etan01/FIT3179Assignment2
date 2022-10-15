@@ -41,10 +41,10 @@
   ],
   "encoding": {
     "theta": {"field": "percent", "type": "quantitative", "stack": true},
-    "color": {"field": "category", "type": "nominal"},
+    "color": {"field": "category", "type": "nominal", "title": "Category"},
     "tooltip":[
-      {"field": "category"},
-      {"field": "percent"}
+      {"field": "category", "title": "Category"},
+      {"field": "percent", "title": "Percent"}
     ]
   }
 }

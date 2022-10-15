@@ -69,6 +69,7 @@
       "encoding": {
         "size": {
           "field": "avg_population",
+          "title": "Population",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
@@ -79,6 +80,7 @@
         },
         "color": {
           "field": "continent",
+          "title": "Continent", 
           "type": "nominal",
           "scale": {
             "domain": ["Americas", "Europe", "Africa", "Asia", "Oceania"],
@@ -94,10 +96,10 @@
         },
         "opacity": {"value": 0.6},
         "tooltip": [
-          {"field": "country", "type": "nominal"},
-          {"field": "avg_population", "type": "quantitative", "format": ".2f"},
-          {"field": "avg_electricity", "type": "quantitative", "format": ".2f"},
-          {"field": "gdp", "type": "quantitative", "format": ".2f"}
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "avg_population", "type": "quantitative", "format": ".2f", "title": "Population"},
+          {"field": "avg_electricity", "type": "quantitative", "format": ".2f", "title": "Electricity Consumption(Terawatt)"},
+          {"field": "gdp", "type": "quantitative", "format": ".2f", "title": "GDP per Capita"}
         ]
       }
     },
@@ -121,10 +123,10 @@
           "value": 0
         },
         "tooltip": [
-          {"field": "country", "type": "nominal"},
-          {"field": "avg_population", "type": "quantitative"},
-          {"field": "avg_electricity", "type": "quantitative"},
-          {"field": "gdp", "type": "quantitative"}
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "avg_population", "type": "quantitative", "title": "Population"},
+          {"field": "avg_electricity", "type": "quantitative", "title": "Electricity Consumption(Terawatt)"},
+          {"field": "gdp", "type": "quantitative", "title": "GDP per Capita"}
         ]
       }
     }

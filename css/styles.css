@@ -39,3 +39,9 @@ hr {
 	border: 0;
 	border-top: 2px solid black;
   }
+
+.title-box{
+	background-color: aquamarine;
+	padding: 10px;
+	border-radius: 20px;
+}
