@@ -11,7 +11,7 @@
       "layer": [
         {
           "width": 500,
-          "height": 400,
+          "height": 300,
           "transform": [
             {
               "filter": {
@@ -70,74 +70,6 @@
       "params": [
         {"name": "click", "select": {"type": "point", "encodings": ["color"]}}
       ]
-    },
-    {
-      "transform": [
-    {
-      "filter": {
-        "field": "country",
-        "oneOf": ["China", "India", "United States", "Indonesia", "Brazil", "Russia"]
-      }
-    },
-    {
-      "filter": {
-        "field": "year",
-        "oneOf": [2000, 2016]
-      }
-    }
-  ],
-  "encoding": {
-    "x": {
-      "field": "total",
-      "type": "quantitative",
-      "title": "Total Electricity Consumption (Terawatt)"
-    },
-    "y": {
-      "field": "country",
-      "type": "nominal",
-      "title": "Country",
-      "axis": {
-        "offset": 5,
-        "ticks": false,
-        "minExtent": 70,
-        "domain": false
-      }
-    }
-  },
-  "layer": [
-    {
-      "mark": "line",
-      "encoding": {
-        "detail": {
-          "field": "country",
-          "type": "nominal"
-        },
-        "color": {"value": "#db646f"}
-      }
-    },
-    {
-      "width": 600,
-      "mark": {
-        "type": "point",
-        "filled": true
-      },
-      "encoding": {
-        "color": {
-          "field": "year",
-          "type": "ordinal",
-          "scale": {
-            "domain": [2000, 2016],
-            "range": ["#e6959c", "#911a24"]
-          },
-          "title": "Year"
-        },
-        "size": {"value": 100},
-        "opacity": {"value": 1},
-        "tooltip": [{"field": "country", "type": "nominal"},
-        {"field": "total", "type": "quantitative", "title": "Total Electricity(Terawatt)"}]
-      }
-    }
-    ]
     }
   ]
 }

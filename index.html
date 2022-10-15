@@ -21,7 +21,18 @@
 
   <div class="title">
     <div class="text">
-      <h1>Global Electritcity Consumption</h1>
+      <h1>Global Electricity Consumption</h1>
+      <div class="topnav">
+          <ul>
+            <li><a href="#map">World Electricity</a></li>
+            <li><a href="#renewable">Renewable Energy</a></li>
+            <li><a href="#GDP">Consumption and GDP</a></li>
+            <li><a href="#nonrenewable">Non-renewable Energy</a></li>
+            <li><a href="#coal">Coal Electricity</a></li>
+            <li><a href="#solar">Solar Electricity</a></li>
+          </ul>
+      </div>
+      <hr></hr>
       <p>
         Electricity Consumption is an amount of electricity being consumed by the population,
         countries and all the world. It has been an important energy that the human uses it since
@@ -39,7 +50,7 @@
   </div>
 
   <div class="pure-u-1-1" style="text-align: center; margin-top: 50px;">
-    <h1>World Total Electricity Consumption until 2016</h1>
+    <h1 id="map">World Total Electricity Consumption until 2016</h1>
     <div id="choropleth_map" style="display: contents;"></div>
   </div>
 
@@ -60,7 +71,7 @@
   <div class="pure-g" style="top: 100px; padding: 40px; justify-content: space-around;">
     <div class="pure-u-1-3">
       <div class="description description-right">
-        <h2>Renewable Energy Production around the world</h2>
+        <h2 id="renewable">Renewable Energy Production around the world</h2>
         <p>
           This map idiom visualises the renewable energy production around the world. Renewable Energy included solar electricity, hydro electricity, 
           wind electricity and other renewable electricity. In this visualisation, 
@@ -80,7 +91,7 @@
   <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around; background-color: white;">
     <div class="pure-u-1-3" style="width: 30%;">
       <div class="description description-left">
-        <div class="title-box">
+        <div class="title-box"  id="GDP">
           <h2>Global Electricity Consumption per Country</h2>
         </div>
         <p>
@@ -107,7 +118,7 @@
 
     <div class="pure-u-1-3">
       <div class="description description-right">
-        <h2>Non-renewable Electricity Consumption (2000-2016)</h2>
+        <h2 id='nonrenewable'>Non-renewable Electricity Consumption (2000-2016)</h2>
         <p>
           This parallel plot visualises the non-renewable electricity consumption by continent from 2000 to 2016.
           This non-rewewable electricity consumption included energy from biofuel, coal, gas, nuclear
@@ -122,12 +133,12 @@
   <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around; background-color: white;">
     <div class="pure-u-1-3" style="width: 30%; ">
         <div class="description description-left">
-          <div class="title-box">
+          <div class="title-box" id="coal">
             <h2>Country Rank on Coal Electricity Consumption per years </h2>
           </div>
           <p>
             This bump chart visualizes the country ranking on coal electricity consumption on years.
-            The ranking is only obtained from the top 10 country. In this chart, developed countries
+            The ranking is only obtained from the top 8 country. In this chart, developed countries
             like 
             <span style="color: grey; font-size: large;"><b>United States</b></span>, 
             <span style="color: orange; font-size: large;"><b>China</b></span>,
@@ -155,7 +166,7 @@
   <div class="pure-g" style="top: 100px; padding: 60px; justify-content: space-around;">
     <div class="pure-u-1-3" style="width: 30%; ">
         <div class="description description-left">
-          <h2>Solar Electricity Consumption per Continent</h2>
+          <h2 id="solar">Solar Electricity Consumption per Continent</h2>
           <p>This stack area visualise the trend of using solar electricity over the years. As the trend moves
             close to 2010, many country in different continent starts to implement solar energy. In this diagram, Asia is 
             is the first-highest solar energy consumption in 2016. This can mainly be contributed by China. It is then followed
@@ -194,27 +205,27 @@
   var spec5 = "js/bumpchart.json"
   var spec6 = "js/stackarea.json"
 
-  vegaEmbed('#choropleth_map', spec1).then(function(result) {
+  vegaEmbed('#choropleth_map', spec1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#scatterplot', spec2).then(function(result) {
+  vegaEmbed('#scatterplot', spec2, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#donutchart', spec3).then(function(result) {
+  vegaEmbed('#donutchart', spec3, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#greenmap', spec4).then(function(result) {
+  vegaEmbed('#greenmap', spec4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#bumpchart', spec5).then(function(result) {
+  vegaEmbed('#bumpchart', spec5, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#stackarea', spec6).then(function(result) {
+  vegaEmbed('#stackarea', spec6, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 

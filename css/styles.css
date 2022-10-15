@@ -19,7 +19,7 @@ body{
 
 .title{
 	font-size: 20px;
-	padding: 60px;
+	padding: 50px;
 	text-align: center;
 	background-color: #ffffff;
 }
@@ -45,3 +45,32 @@ hr {
 	padding: 10px;
 	border-radius: 20px;
 }
+
+.topnav{
+	padding: 10px 0 8px 0;
+}
+
+.topnav ul{
+	list-style-type: none;
+    overflow: hidden;
+    display: block;
+}
+
+.topnav li{
+	display: inline-flex;
+	padding: 0 13px;
+	font-size: 18px;
+}
+
+.topnav li a{
+	color: black;
+	text-decoration: none;
+}
+
+.topnav li a:hover{
+	color: green;
+	cursor:pointer;
+	font-weight: 900;
+}
+
+

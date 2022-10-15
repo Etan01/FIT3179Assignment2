@@ -8,13 +8,25 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/coal_long2.csv"
   },
-  "transform": [{"filter": "datum.coal_rank <= 11"}],
+  "transform": [{"filter": "datum.coal_rank <= 8"},
+  {"filter": "datum.year >= minimum_year"}],
   "mark": {"type": "line", "point": {"size": 150}},
   "params": [
     {
       "name": "continent_highlight",
       "select": {"type": "point", "fields": ["country"]},
       "bind": "legend"
+    },
+    {
+      "name": "minimum_year",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2016,
+        "step": 2,
+        "name": "Minimum year: "
+      }
     }
   ],
   "encoding": {
@@ -26,7 +38,11 @@
       "title": "Ranking"
     },
     "order": {"field": "year"},
-    "color": {"field": "country", "type": "nominal", "scale":{"scheme": "tableau20"}},
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
     "opacity": {
       "condition": {"param": "continent_highlight", "value": 0.9},
       "value": 0.2
