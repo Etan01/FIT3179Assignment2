@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
   "height": 400,
-  "title": "Trend on Total Electricty Consumption and GDP per Capita",
   "background": null,
   "data": {
     "url": "https://raw.githubusercontent.com/Etan01/FIT3179Assignment2/main/data/electricty_group_continent.csv"
@@ -104,6 +103,21 @@
       }
     },
     {
+      "transform": [
+        {"filter": "datum.country == 'United States'"},
+        {"calculate": "'United States is the world’s largest electricty consumption'", "as": "note"}
+      ],
+      "mark": {
+        "type": "text",
+        "dx": -170,
+        "fontSize": 12
+        },
+      "encoding": {
+        "text": {
+          "field": "note"}
+      }
+    },
+    {
       "mark": {
         "type": "text",
         "align": "right",
@@ -117,7 +131,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['country'] == 'United States' || datum['country'] == 'China' || datum['country'] == 'Russia' || datum['country'] == 'Japan' || datum['country'] == 'Italy'",
+            "test": "datum['country'] == 'China' || datum['country'] == 'Russia' || datum['country'] == 'Japan' || datum['country'] == 'Italy'",
             "value": 1
           },
           "value": 0

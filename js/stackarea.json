@@ -39,6 +39,21 @@
             "color": {"field": "continent", "type": "nominal"},
             "tooltip": [{"field": "continent", "type": "ordinal"}]
           }
+        },
+        {
+          "transform": [
+          {"filter": "datum.continent == 'Asia'"},
+          {"calculate": "'Asia is world-leader on solar electricity'", "as": "note"}
+        ],
+          "mark": {
+            "type": "text",
+            "dx": 10,
+            "dy": 50
+          },
+          "encoding": {
+            "text": {"field": "note"},
+            "size": {"value": 14}
+          }
         }
       ]
     },
